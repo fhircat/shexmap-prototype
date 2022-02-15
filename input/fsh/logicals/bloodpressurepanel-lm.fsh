@@ -44,7 +44,7 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * meanArterialPressureMeas.device 0..1 CodeableConcept "Device"
 * meanArterialPressureMeas.device from DeviceVSET
 * meanArterialPressureMeas.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
-* meanArterialPressureMeas.bloodPressureCuffSize from BloodPressureCuffSize_VSET
+* meanArterialPressureMeas.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * meanArterialPressureMeas.bodyPosition 0..1 CodeableConcept "BodyPosition"
 * meanArterialPressureMeas.bodyPosition from BodyPositionVSET
 * meanArterialPressureMeas.abnormalInterpretation 0..1 CodeableConcept "AbnormalInterpretation"
