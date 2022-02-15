@@ -1,0 +1,8 @@
+canonical: http://opencem.org/fhir
+fhirVersion: 4.0.1
+FSHOnly: true
+applyExtensionMetadataToRoot: false
+id: opencem.org.fhir.bp
+name: OpenCEMLogicalModels
+status: active
+version: 1.0.0

@@ -1,0 +1,809 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "BloodPressurePanel",
+  "url": "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel",
+  "version": "1.0.0",
+  "name": "BloodPressurePanel",
+  "title": "Blood Pressure Panel",
+  "status": "active",
+  "description": "BloodPressurePanel is an Associated CEM Panel that groups a systolic blood pressure, diastolic blood pressure, and mean arterial pressure all obtained at the same time.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "BloodPressurePanel",
+        "path": "BloodPressurePanel",
+        "short": "Blood Pressure Panel",
+        "definition": "BloodPressurePanel is an Associated CEM Panel that groups a systolic blood pressure, diastolic blood pressure, and mean arterial pressure all obtained at the same time."
+      },
+      {
+        "id": "BloodPressurePanel.sbp",
+        "path": "BloodPressurePanel.sbp",
+        "short": "SystolicBloodPressureMeas",
+        "definition": "SystolicBloodPressureMeas",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "BloodPressurePanel.sbp.quantity",
+        "path": "BloodPressurePanel.sbp.quantity",
+        "short": "Data",
+        "definition": "Data",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.sbp.bloodPressureCuffSize",
+        "path": "BloodPressurePanel.sbp.bloodPressureCuffSize",
+        "short": "BloodPressureCuffSize",
+        "definition": "BloodPressureCuffSize",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BloodPressureCuffSizeVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.sbp.bodyLocationPrecoord",
+        "path": "BloodPressurePanel.sbp.bodyLocationPrecoord",
+        "short": "BodyLocationPrecoord",
+        "definition": "BodyLocationPrecoord",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyLocationPrecoordVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.sbp.bodyPosition",
+        "path": "BloodPressurePanel.sbp.bodyPosition",
+        "short": "BodyPosition",
+        "definition": "BodyPosition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyPositionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.sbp.referenceRange",
+        "path": "BloodPressurePanel.sbp.referenceRange",
+        "short": "ReferenceRange",
+        "definition": "ReferenceRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "BloodPressurePanel.sbp.referenceRange.lowBound",
+        "path": "BloodPressurePanel.sbp.referenceRange.lowBound",
+        "short": "LowBound",
+        "definition": "LowBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.sbp.referenceRange.highBound",
+        "path": "BloodPressurePanel.sbp.referenceRange.highBound",
+        "short": "HighBound",
+        "definition": "HighBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.sbp.referenceRange.aggregate",
+        "path": "BloodPressurePanel.sbp.referenceRange.aggregate",
+        "short": "ReferenceRangeNar",
+        "definition": "ReferenceRangeNar",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.sbp.referenceRange.referenceRangeMeaning",
+        "path": "BloodPressurePanel.sbp.referenceRange.referenceRangeMeaning",
+        "short": "ReferenceRangeMeaning",
+        "definition": "ReferenceRangeMeaning",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/ReferenceRangeMeaningVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.sbp.referenceRange.ageMeasQualifier",
+        "path": "BloodPressurePanel.sbp.referenceRange.ageMeasQualifier",
+        "short": "AgeMeasQualifier",
+        "definition": "AgeMeasQualifier",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.sbp.associatedPrecondition",
+        "path": "BloodPressurePanel.sbp.associatedPrecondition",
+        "short": "AssociatedPrecondition",
+        "definition": "AssociatedPrecondition",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.dbp",
+        "path": "BloodPressurePanel.dbp",
+        "short": "DiastolicBloodPressureMeas",
+        "definition": "DiastolicBloodPressureMeas",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "BloodPressurePanel.dbp.quantity",
+        "path": "BloodPressurePanel.dbp.quantity",
+        "short": "Data",
+        "definition": "Data",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.dbp.bloodPressureCuffSize",
+        "path": "BloodPressurePanel.dbp.bloodPressureCuffSize",
+        "short": "BloodPressureCuffSize",
+        "definition": "BloodPressureCuffSize",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BloodPressureCuffSizeVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.dbp.bodyLocationPrecoord",
+        "path": "BloodPressurePanel.dbp.bodyLocationPrecoord",
+        "short": "BodyLocationPrecoord",
+        "definition": "BodyLocationPrecoord",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyLocationPrecoordVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.dbp.bodyPosition",
+        "path": "BloodPressurePanel.dbp.bodyPosition",
+        "short": "BodyPosition",
+        "definition": "BodyPosition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyPositionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.dbp.referenceRange",
+        "path": "BloodPressurePanel.dbp.referenceRange",
+        "short": "ReferenceRange",
+        "definition": "ReferenceRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "BloodPressurePanel.dbp.referenceRange.lowBound",
+        "path": "BloodPressurePanel.dbp.referenceRange.lowBound",
+        "short": "LowBound",
+        "definition": "LowBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.dbp.referenceRange.highBound",
+        "path": "BloodPressurePanel.dbp.referenceRange.highBound",
+        "short": "HighBound",
+        "definition": "HighBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.dbp.referenceRange.aggregate",
+        "path": "BloodPressurePanel.dbp.referenceRange.aggregate",
+        "short": "ReferenceRangeNar",
+        "definition": "ReferenceRangeNar",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.dbp.referenceRange.referenceRangeMeaning",
+        "path": "BloodPressurePanel.dbp.referenceRange.referenceRangeMeaning",
+        "short": "ReferenceRangeMeaning",
+        "definition": "ReferenceRangeMeaning",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/ReferenceRangeMeaningVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.dbp.referenceRange.ageMeasQualifier",
+        "path": "BloodPressurePanel.dbp.referenceRange.ageMeasQualifier",
+        "short": "AgeMeasQualifier",
+        "definition": "AgeMeasQualifier",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.dbp.associatedPrecondition",
+        "path": "BloodPressurePanel.dbp.associatedPrecondition",
+        "short": "AssociatedPrecondition",
+        "definition": "AssociatedPrecondition",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas",
+        "path": "BloodPressurePanel.meanArterialPressureMeas",
+        "short": "MeanArterialPressureMeas",
+        "definition": "MeanArterialPressureMeas",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.quantity",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.quantity",
+        "short": "Data",
+        "definition": "Data",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.method",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.method",
+        "short": "Method",
+        "definition": "Method",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/MethodVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.device",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.device",
+        "short": "Device",
+        "definition": "Device",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/DeviceVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.bloodPressureCuffSize",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.bloodPressureCuffSize",
+        "short": "BloodPressureCuffSize",
+        "definition": "BloodPressureCuffSize",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BloodPressureCuffSizeVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.bodyPosition",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.bodyPosition",
+        "short": "BodyPosition",
+        "definition": "BodyPosition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyPositionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.abnormalInterpretation",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.abnormalInterpretation",
+        "short": "AbnormalInterpretation",
+        "definition": "AbnormalInterpretation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AbnormalInterpretationVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.referenceRangeNar",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.referenceRangeNar",
+        "short": "ReferenceRangeNar",
+        "definition": "ReferenceRangeNar",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.meanArterialPressureMeas.associatedPrecondition",
+        "path": "BloodPressurePanel.meanArterialPressureMeas.associatedPrecondition",
+        "short": "AssociatedPrecondition",
+        "definition": "AssociatedPrecondition",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.method",
+        "path": "BloodPressurePanel.method",
+        "short": "Method",
+        "definition": "Method",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/MethodVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.device",
+        "path": "BloodPressurePanel.device",
+        "short": "Device",
+        "definition": "Device",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/DeviceVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.bloodPressureCuffSize",
+        "path": "BloodPressurePanel.bloodPressureCuffSize",
+        "short": "BloodPressureCuffSize",
+        "definition": "BloodPressureCuffSize",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BloodPressureCuffSizeVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.bodyLocationPrecoord",
+        "path": "BloodPressurePanel.bodyLocationPrecoord",
+        "short": "BodyLocationPrecoord",
+        "definition": "BodyLocationPrecoord",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyLocationPrecoordVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.bodyPosition",
+        "path": "BloodPressurePanel.bodyPosition",
+        "short": "BodyPosition",
+        "definition": "BodyPosition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyPositionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.sleepStatus",
+        "path": "BloodPressurePanel.sleepStatus",
+        "short": "SleepStatus",
+        "definition": "SleepStatus",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/SleepStatusVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.associatedPrecondition",
+        "path": "BloodPressurePanel.associatedPrecondition",
+        "short": "AssociatedPrecondition",
+        "definition": "AssociatedPrecondition",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.exerciseAssociation",
+        "path": "BloodPressurePanel.exerciseAssociation",
+        "short": "ExerciseAssociation",
+        "definition": "ExerciseAssociation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/ExerciseAssociationVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.cardiacArrhythmiaIndicator",
+        "path": "BloodPressurePanel.cardiacArrhythmiaIndicator",
+        "short": "CardiacArrhythmiaIndicator",
+        "definition": "CardiacArrhythmiaIndicator",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/PresentAbsentVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.focalSubject",
+        "path": "BloodPressurePanel.focalSubject",
+        "short": "FocalSubject",
+        "definition": "FocalSubject",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/FocalSubjectVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.comment",
+        "path": "BloodPressurePanel.comment",
+        "short": "Comment",
+        "definition": "Comment",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.externalIdentifier",
+        "path": "BloodPressurePanel.externalIdentifier",
+        "short": "ExternalIdentifier",
+        "definition": "ExternalIdentifier",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.patientIdentifier",
+        "path": "BloodPressurePanel.patientIdentifier",
+        "short": "PatientIdentifier",
+        "definition": "PatientIdentifier",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.status",
+        "path": "BloodPressurePanel.status",
+        "short": "Status",
+        "definition": "Status",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/StatusVSET"
+        }
+      },
+      {
+        "id": "BloodPressurePanel.reportedReceived",
+        "path": "BloodPressurePanel.reportedReceived",
+        "short": "ReportedReceived",
+        "definition": "ReportedReceived",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.observed",
+        "path": "BloodPressurePanel.observed",
+        "short": "Observed",
+        "definition": "Observed",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.performed",
+        "path": "BloodPressurePanel.performed",
+        "short": "Performed",
+        "definition": "Performed",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.verified",
+        "path": "BloodPressurePanel.verified",
+        "short": "Verified",
+        "definition": "Verified",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "code"
+          }
+        ]
+      }
+    ]
+  }
+}

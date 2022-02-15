@@ -1,0 +1,23 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "AssociatedPrecondition_VSET",
+  "id": "AssociatedPreconditionVSET",
+  "description": "AssociatedPrecondition_VSET.",
+  "version": "20220203",
+  "url": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET",
+  "experimental": false,
+  "publisher": "OpenCEM Project",
+  "contact": [
+    {
+      "name": "OpenCEM Project",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://opencem.org/fhir"
+        }
+      ]
+    }
+  ],
+  "date": "2022-02-03"
+}
