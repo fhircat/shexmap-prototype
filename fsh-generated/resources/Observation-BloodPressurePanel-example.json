@@ -1,0 +1,125 @@
+{
+  "resourceType": "Observation",
+  "id": "BloodPressurePanel-example",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/vitals/StructureDefinition/blood-pressure-panel"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/observation-bodyPosition",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "33586001",
+            "system": "http://snomed.info/sct",
+            "display": "Sitting Position"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/us/vitals/StructureDefinition/SleepStatusExt",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "248218005",
+            "system": "http://snomed.info/sct",
+            "display": "Awake"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/us/vitals/StructureDefinition/ExerciseAssociationExt",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "263678003",
+            "system": "http://snomed.info/sct",
+            "display": "At rest"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "vital-signs",
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "display": "Vital Signs"
+        }
+      ],
+      "text": "Vital Signs"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "code": "85354-9",
+        "system": "http://loinc.org",
+        "display": "Blood pressure panel with all children optional"
+      }
+    ]
+  },
+  "subject": {
+    "display": "Small Child1234"
+  },
+  "effectiveDateTime": "2019-10-16T12:12:29-09:00",
+  "issued": "2019-10-16T12:12:29-10:00",
+  "performer": [
+    {
+      "display": "A. Pediatrician6"
+    }
+  ],
+  "bodySite": {
+    "coding": [
+      {
+        "code": "723961002",
+        "system": "http://snomed.info/sct",
+        "display": "Structure of left brachial artery (body structure)"
+      }
+    ]
+  },
+  "device": {
+    "reference": "Device/BPDevice1-example"
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "8480-6",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 120,
+        "code": "mm[Hg]",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mm[Hg]"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "code": "8462-4",
+            "system": "http://loinc.org"
+          }
+        ]
+      },
+      "valueQuantity": {
+        "value": 80,
+        "code": "mm[Hg]",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mm[Hg]"
+      }
+    }
+  ]
+}
