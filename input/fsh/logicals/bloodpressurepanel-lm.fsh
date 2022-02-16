@@ -21,7 +21,7 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * sbp.associatedPrecondition 0..* CodeableConcept "AssociatedPrecondition"
 * sbp.associatedPrecondition from AssociatedPreconditionVSET
 * dbp 0..1 SU BackboneElement "DiastolicBloodPressureMeas"
-* dbp.quantity 1..1 Quantity "Data"
+* dbp.quantity 0..1 Quantity "Data"
 * dbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
 * dbp.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * dbp.bodyLocationPrecoord 0..1 CodeableConcept "BodyLocationPrecoord"
@@ -38,7 +38,7 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * dbp.associatedPrecondition 0..* CodeableConcept "AssociatedPrecondition"
 * dbp.associatedPrecondition from AssociatedPreconditionVSET
 * meanArterialPressureMeas 0..1 SU BackboneElement "MeanArterialPressureMeas"
-* meanArterialPressureMeas.quantity 1..1 Quantity "Data"
+* meanArterialPressureMeas.quantity 0..1 Quantity "Data"
 * meanArterialPressureMeas.method 0..1 CodeableConcept "Method"
 * meanArterialPressureMeas.method from MethodVSET
 * meanArterialPressureMeas.device 0..1 CodeableConcept "Device"
