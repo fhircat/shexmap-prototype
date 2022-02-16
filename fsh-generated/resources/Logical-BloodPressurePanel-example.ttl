@@ -1,0 +1,55 @@
+@prefix fhir:  <http://hl7.org/fhir/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sct:   <http://snomed.info/id#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+fhir:null  a                         fhir:BloodPressurePanel ;
+        fhir:DomainResource.bloodPressureCuffSize
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "720738005" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "Blood pressure cuff, adult size large (physical object)" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "Blood pressure cuff, adult size large (physical object)" ]
+                ] ;
+        fhir:DomainResource.bodyPosition
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "720738005" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "Blood pressure cuff, adult size large (physical object)" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "Sitting Position" ]
+                ] ;
+        fhir:DomainResource.comment  [ fhir:value
+                          "This is a blood pressure panel logical model example." ] ;
+        fhir:DomainResource.dbp      fhir:null ;
+        fhir:DomainResource.exerciseAssociation
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "263678003" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "At rest" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "At rest" ]
+                ] ;
+        fhir:DomainResource.meanArterialPressureMeas
+                fhir:null ;
+        fhir:DomainResource.sbp      fhir:null ;
+        fhir:DomainResource.sleepStatus
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "248218005" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "Awake" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "Awake" ]
+                ] ;
+        fhir:Resource.meta           [ fhir:Meta.profile  [ fhir:index  0 ;
+                                                            fhir:value  "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel"
+                                                          ]
+                                     ] ;
+        fhir:nodeRole                fhir:treeRoot .
+

@@ -1,0 +1,100 @@
+{
+    "resourceType": "BloodPressurePanel",
+    "meta": {
+      "profile": [ "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel" ]
+    },
+    "sbp": {
+      "resourceType": "SystolicBloodPressureMeas",
+      "meta": {
+        "profile": [ "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas" ]
+      },
+      "quantity": {
+        "value": 120,
+        "unit": "mm[Hg]",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+      },
+      "bloodPressureCuffSize": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "720738005",
+          "display": "Blood pressure cuff, adult size large (physical object)"
+        } ],
+        "text": "Blood pressure cuff, adult size large (physical object)"
+      }
+    },
+    "dbp": {
+      "resourceType": "DiastolicBloodPressureMeas",
+      "meta": {
+        "profile": [ "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas" ]
+      },
+      "quantity": {
+        "value": 80,
+        "unit": "mm[Hg]",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+      },
+      "bloodPressureCuffSize": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "720738005",
+          "display": "Blood pressure cuff, adult size large (physical object)"
+        } ],
+        "text": "Blood pressure cuff, adult size large (physical object)"
+      }
+    },
+    "meanArterialPressureMeas": {
+      "resourceType": "MeanArterialPressureMeas",
+      "meta": {
+        "profile": [ "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas" ]
+      },
+      "quantity": {
+        "value": 80,
+        "unit": "mm[Hg]",
+        "system": "http://unitsofmeasure.org",
+        "code": "mm[Hg]"
+      },
+      "bloodPressureCuffSize": {
+        "coding": [ {
+          "system": "http://snomed.info/sct",
+          "code": "720738005",
+          "display": "Blood pressure cuff, adult size large (physical object)"
+        } ],
+        "text": "Blood pressure cuff, adult size large (physical object)"
+      }
+    },
+    "bloodPressureCuffSize": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "720738005",
+        "display": "Blood pressure cuff, adult size large (physical object)"
+      } ],
+      "text": "Blood pressure cuff, adult size large (physical object)"
+    },
+    "bodyPosition": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "720738005",
+        "display": "Blood pressure cuff, adult size large (physical object)"
+      } ],
+      "text": "Sitting Position"
+    },
+    "sleepStatus": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "248218005",
+        "display": "Awake"
+      } ],
+      "text": "Awake"
+    },
+    "exerciseAssociation": {
+      "coding": [ {
+        "system": "http://snomed.info/sct",
+        "code": "263678003",
+        "display": "At rest"
+      } ],
+      "text": "At rest"
+    },
+    "comment": "This is a blood pressure panel logical model example."
+  }
+  
