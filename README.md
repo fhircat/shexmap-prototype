@@ -4,10 +4,19 @@ ShExMap-based Data Transformation Engine
 
 ## Logical Model (Source Model)
 
-* Blood Pressure Panel - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/bloodpressurepanel-lm.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-BloodPressurePanel.json)) ([Tree Structure](https://simplifier.net/ddionfhir/bloodpressurepanel))
-* Blood Pressure Panel Example - ([JSON](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/Logical-BloodPressurePanel-example.json)) ([TTL](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/Logical-BloodPressurePanel-example.ttl))
+### A single model
 
-![](https://github.com/fhircat/shexmap-prototype/blob/main/logical-model-diagram.png)
+* Blood Pressure Panel - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/bloodpressurepanel-lm-v1.1.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-BloodPressurePanelLM.json)) ([Tree Structure](https://simplifier.net/ddionfhir/bloodpressurepanellm))
+* Blood Pressure Panel Example - ([JSON](https://github.com/fhircat/shexmap-prototype/blob/main/examples/logical-bloodpressurepanel-example.json))
+
+![](https://github.com/fhircat/shexmap-prototype/blob/main/logical-model-diagram-v1.1.png)
+
+### A composite model
+* Blood Pressure Panel - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/BloodPressurePanel.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-BloodPressurePanel.json)
+* SystolicBloodPressureMeas - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/SystolicBloodPressureMeas.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-SystolicBloodPressureMeas.json))
+* DiastolicBloodPressureMeas - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/DiastolicBloodPressureMeas.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-DiastolicBloodPressureMeas.json))
+* MeanArterialPressureMeas - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/MeanArterialPressureMeas.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-MeanArterialPressureMeas.json))
+
 
 ## FHIR Profile (Target Model)
 
