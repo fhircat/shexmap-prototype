@@ -1,11 +1,23 @@
+/*
+CN: For discussion tomorrow:
+
+ - Do we want to have the logical model be an exact representation of the CEM or an approximation
+ - Should we simplify the model for our initial pass
+ 	- Not worry about provenance information initially
+ 	- Not model BloodPressurePanel as a panel but rather as a blood pressure model with dependent components. The former means attribute duplication.
+*/
 Logical: BloodPressurePanel
 Id: BloodPressurePanel
 Parent: Element
 Title: "Blood Pressure Panel"
 Description: "BloodPressurePanel is an Associated CEM Panel that groups a systolic blood pressure, diastolic blood pressure, and mean arterial pressure all obtained at the same time."
-* sbp 1..1 SU BackboneElement "SystolicBloodPressureMeas"
-* sbp.quantity 1..1 Quantity "Data"
-* sbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
+* key 0..1 CodeableConcept //CN: Added key to hold the LOINC code for BP
+* key from BloodPressurePanel_CODE //CN: Need to define
+* sbp 1..1 SU BackboneElement "SystolicBloodPressureMeas" //Okay to do as a backbone element. Could also do as a separate model at some point
+* sbp.key 0..1 CodeableConcept //CN: Holds the LOINC code for SBP
+* sbp.key from SystolicBloodPressure_CODE //CN: Need to define
+* sbp.quantity 1..1 Quantity "Data" //CN: Need to restrict units to mmHg
+* sbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize" //May not need to repeat some of the following items if we are going with backbone element rather than panel of potentially independent observations.
 * sbp.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * sbp.bodyLocationPrecoord 0..1 CodeableConcept "BodyLocationPrecoord"
 * sbp.bodyLocationPrecoord from BodyLocationPrecoordVSET
@@ -21,8 +33,10 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * sbp.associatedPrecondition 0..* CodeableConcept "AssociatedPrecondition"
 * sbp.associatedPrecondition from AssociatedPreconditionVSET
 * dbp 0..1 SU BackboneElement "DiastolicBloodPressureMeas"
-* dbp.quantity 0..1 Quantity "Data"
-* dbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
+* dbp.key 0..1 CodeableConcept //CN: Holds the LOINC code for DBP
+* dbp.key from DiastolicBloodPressure_CODE //CN: Need to define
+* dbp.quantity 0..1 Quantity "Data" //CN: Need to restrict units to mmHg
+* dbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize" //May not need to repeat some of the following items if we are going with backbone element rather than panel of potentially independent observations.
 * dbp.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * dbp.bodyLocationPrecoord 0..1 CodeableConcept "BodyLocationPrecoord"
 * dbp.bodyLocationPrecoord from BodyLocationPrecoordVSET
@@ -70,14 +84,14 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * exerciseAssociation from ExerciseAssociationVSET
 * cardiacArrhythmiaIndicator 0..1 CodeableConcept "CardiacArrhythmiaIndicator"
 * cardiacArrhythmiaIndicator from PresentAbsentVSET
-* focalSubject 0..1 CodeableConcept "FocalSubject"
+* focalSubject 0..1 CodeableConcept "FocalSubject" //If we wish to be true to the model,may need to be either a backbone element or some sort of choice type
 * focalSubject from FocalSubjectVSET
-* comment 0..1 string "Comment"
+* comment 0..1 string "Comment" //Technically should be really 0..* but it is 0..1 in model
 * externalIdentifier 0..1 Identifier "ExternalIdentifier"
 * patientIdentifier 0..1 Identifier "PatientIdentifier"
 * status 0..1 CodeableConcept "Status"
 * status from Status_VSET
-* reportedReceived 0..* code "ReportedReceived"
-* observed 0..* code "Observed"
-* performed 0..* code "Performed"
-* verified 0..* code "Verified"
+* reportedReceived 0..* code "ReportedReceived" //These are really provenance models
+* observed 0..* code "Observed" //These are really provenance models
+* performed 0..* code "Performed" //These are really provenance models
+* verified 0..* code "Verified" //These are really provenance models
