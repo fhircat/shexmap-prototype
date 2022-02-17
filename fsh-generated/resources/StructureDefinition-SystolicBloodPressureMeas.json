@@ -1,0 +1,245 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "SystolicBloodPressureMeas",
+  "url": "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas",
+  "version": "1.0.0",
+  "name": "SystolicBloodPressureMeas",
+  "title": "SystolicBloodPressureMeas",
+  "status": "active",
+  "description": "SystolicBloodPressureMeas model is a measurement model.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "SystolicBloodPressureMeas",
+        "path": "SystolicBloodPressureMeas",
+        "short": "SystolicBloodPressureMeas",
+        "definition": "SystolicBloodPressureMeas model is a measurement model."
+      },
+      {
+        "id": "SystolicBloodPressureMeas.key",
+        "path": "SystolicBloodPressureMeas.key",
+        "short": "SystolicBloodPressureMeas_CODE",
+        "definition": "SystolicBloodPressureMeas_CODE",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/SystolicBloodPressureMeasCODE"
+        }
+      },
+      {
+        "id": "SystolicBloodPressureMeas.data",
+        "path": "SystolicBloodPressureMeas.data",
+        "short": "Data",
+        "definition": "Data",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "SystolicBloodPressureMeas.data.quantity",
+        "path": "SystolicBloodPressureMeas.data.quantity",
+        "short": "Quantity",
+        "definition": "Quantity",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "SystolicBloodPressureMeas.data.unit_code",
+        "path": "SystolicBloodPressureMeas.data.unit_code",
+        "short": "unit_code",
+        "definition": "unit_code",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/MillimetersOfMercuryCODE"
+        }
+      },
+      {
+        "id": "SystolicBloodPressureMeas.bloodPressureCuffSize",
+        "path": "SystolicBloodPressureMeas.bloodPressureCuffSize",
+        "short": "BloodPressureCuffSize",
+        "definition": "BloodPressureCuffSize",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BloodPressureCuffSizeVSET"
+        }
+      },
+      {
+        "id": "SystolicBloodPressureMeas.bodyLocationPrecoord",
+        "path": "SystolicBloodPressureMeas.bodyLocationPrecoord",
+        "short": "BodyLocationPrecoord",
+        "definition": "BodyLocationPrecoord",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyLocationPrecoordVSET"
+        }
+      },
+      {
+        "id": "SystolicBloodPressureMeas.bodyPosition",
+        "path": "SystolicBloodPressureMeas.bodyPosition",
+        "short": "BodyPosition",
+        "definition": "BodyPosition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyPositionVSET"
+        }
+      },
+      {
+        "id": "SystolicBloodPressureMeas.referenceRange",
+        "path": "SystolicBloodPressureMeas.referenceRange",
+        "short": "ReferenceRange",
+        "definition": "ReferenceRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "SystolicBloodPressureMeas.referenceRange.lowBound",
+        "path": "SystolicBloodPressureMeas.referenceRange.lowBound",
+        "short": "LowBound",
+        "definition": "LowBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "SystolicBloodPressureMeas.referenceRange.highBound",
+        "path": "SystolicBloodPressureMeas.referenceRange.highBound",
+        "short": "HighBound",
+        "definition": "HighBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "SystolicBloodPressureMeas.referenceRange.aggregate",
+        "path": "SystolicBloodPressureMeas.referenceRange.aggregate",
+        "short": "ReferenceRangeNar",
+        "definition": "ReferenceRangeNar",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "SystolicBloodPressureMeas.referenceRange.referenceRangeMeaning",
+        "path": "SystolicBloodPressureMeas.referenceRange.referenceRangeMeaning",
+        "short": "ReferenceRangeMeaning",
+        "definition": "ReferenceRangeMeaning",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/ReferenceRangeMeaningVSET"
+        }
+      },
+      {
+        "id": "SystolicBloodPressureMeas.referenceRange.ageMeasQualifier",
+        "path": "SystolicBloodPressureMeas.referenceRange.ageMeasQualifier",
+        "short": "AgeMeasQualifier",
+        "definition": "AgeMeasQualifier",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "SystolicBloodPressureMeas.associatedPrecondition",
+        "path": "SystolicBloodPressureMeas.associatedPrecondition",
+        "short": "AssociatedPrecondition",
+        "definition": "AssociatedPrecondition",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET"
+        }
+      }
+    ]
+  }
+}

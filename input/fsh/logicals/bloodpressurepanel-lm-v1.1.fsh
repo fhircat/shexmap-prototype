@@ -1,23 +1,18 @@
-/*
-CN: For discussion tomorrow:
-
- - Do we want to have the logical model be an exact representation of the CEM or an approximation
- - Should we simplify the model for our initial pass
- 	- Not worry about provenance information initially
- 	- Not model BloodPressurePanel as a panel but rather as a blood pressure model with dependent components. The former means attribute duplication.
-*/
-Logical: BloodPressurePanel
-Id: BloodPressurePanel
+Logical: BloodPressurePanelLM
+Id: BloodPressurePanelLM
 Parent: Element
 Title: "Blood Pressure Panel"
 Description: "BloodPressurePanel is an Associated CEM Panel that groups a systolic blood pressure, diastolic blood pressure, and mean arterial pressure all obtained at the same time."
-* key 0..1 CodeableConcept //CN: Added key to hold the LOINC code for BP
-* key from BloodPressurePanel_CODE //CN: Need to define
-* sbp 1..1 SU BackboneElement "SystolicBloodPressureMeas" //Okay to do as a backbone element. Could also do as a separate model at some point
-* sbp.key 0..1 CodeableConcept //CN: Holds the LOINC code for SBP
-* sbp.key from SystolicBloodPressure_CODE //CN: Need to define
-* sbp.quantity 1..1 Quantity "Data" //CN: Need to restrict units to mmHg
-* sbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize" //May not need to repeat some of the following items if we are going with backbone element rather than panel of potentially independent observations.
+* key 0..1 CodeableConcept "BloodPressurePanel_CODE"
+* key from BloodPressurePanelCODE
+* sbp 1..1 SU BackboneElement "SystolicBloodPressureMeas"
+* sbp.key 0..1 CodeableConcept "SystolicBloodPressureMeas_CODE"
+* sbp.key from SystolicBloodPressureMeasCODE
+* sbp.data 1..1 SU BackboneElement "Data"
+* sbp.data.quantity 1..1 Quantity "Quantity"
+* sbp.data.unit_code 0..1 CodeableConcept "unit_code"
+* sbp.data.unit_code from MillimetersOfMercuryCODE
+* sbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
 * sbp.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * sbp.bodyLocationPrecoord 0..1 CodeableConcept "BodyLocationPrecoord"
 * sbp.bodyLocationPrecoord from BodyLocationPrecoordVSET
@@ -33,10 +28,13 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * sbp.associatedPrecondition 0..* CodeableConcept "AssociatedPrecondition"
 * sbp.associatedPrecondition from AssociatedPreconditionVSET
 * dbp 0..1 SU BackboneElement "DiastolicBloodPressureMeas"
-* dbp.key 0..1 CodeableConcept //CN: Holds the LOINC code for DBP
-* dbp.key from DiastolicBloodPressure_CODE //CN: Need to define
-* dbp.quantity 0..1 Quantity "Data" //CN: Need to restrict units to mmHg
-* dbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize" //May not need to repeat some of the following items if we are going with backbone element rather than panel of potentially independent observations.
+* dbp.key 0..1 CodeableConcept "DiastolicBloodPressureMeas_CODE"
+* dbp.key from DiastolicBloodPressureMeasCODE
+* dbp.data 1..1 SU BackboneElement "Data"
+* dbp.data.quantity 1..1 Quantity "Quantity"
+* dbp.data.unit_code 0..1 CodeableConcept "unit_code"
+* dbp.data.unit_code from MillimetersOfMercuryCODE
+* dbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
 * dbp.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * dbp.bodyLocationPrecoord 0..1 CodeableConcept "BodyLocationPrecoord"
 * dbp.bodyLocationPrecoord from BodyLocationPrecoordVSET
@@ -52,7 +50,12 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * dbp.associatedPrecondition 0..* CodeableConcept "AssociatedPrecondition"
 * dbp.associatedPrecondition from AssociatedPreconditionVSET
 * meanArterialPressureMeas 0..1 SU BackboneElement "MeanArterialPressureMeas"
-* meanArterialPressureMeas.quantity 0..1 Quantity "Data"
+* meanArterialPressureMeas.key 0..1 CodeableConcept "MeanArterialPressureMeas_CODE"
+* meanArterialPressureMeas.key from MeanArterialPressureMeasCODE
+* meanArterialPressureMeas.data 1..1 SU BackboneElement "Data"
+* meanArterialPressureMeas.data.quantity 1..1 Quantity "Quantity"
+* meanArterialPressureMeas.data.unit_code 0..1 CodeableConcept "unit_code"
+* meanArterialPressureMeas.data.unit_code from MillimetersOfMercuryCODE
 * meanArterialPressureMeas.method 0..1 CodeableConcept "Method"
 * meanArterialPressureMeas.method from MethodVSET
 * meanArterialPressureMeas.device 0..1 CodeableConcept "Device"
@@ -84,14 +87,13 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * exerciseAssociation from ExerciseAssociationVSET
 * cardiacArrhythmiaIndicator 0..1 CodeableConcept "CardiacArrhythmiaIndicator"
 * cardiacArrhythmiaIndicator from PresentAbsentVSET
-* focalSubject 0..1 CodeableConcept "FocalSubject" //If we wish to be true to the model,may need to be either a backbone element or some sort of choice type
-* focalSubject from FocalSubjectVSET
-* comment 0..1 string "Comment" //Technically should be really 0..* but it is 0..1 in model
+* focalSubject 0..1 SU BackboneElement "FocalSubject"
+* focalSubject.data 0..1 CodeableConcept "Data"
+* focalSubject.data from FocalSubjectVSET
+* focalSubject.personIdentifier 0..* Identifier "PersonIdentifier"
+* focalSubject.simpleName 0..1 string "SimpleName"
+* comment 0..1 string "Comment"
 * externalIdentifier 0..1 Identifier "ExternalIdentifier"
 * patientIdentifier 0..1 Identifier "PatientIdentifier"
 * status 0..1 CodeableConcept "Status"
 * status from Status_VSET
-* reportedReceived 0..* code "ReportedReceived" //These are really provenance models
-* observed 0..* code "Observed" //These are really provenance models
-* performed 0..* code "Performed" //These are really provenance models
-* verified 0..* code "Verified" //These are really provenance models

@@ -1,0 +1,36 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "MeanArterialPressureMeas_CODE",
+  "id": "MeanArterialPressureMeasCODE",
+  "description": "MeanArterialPressureMeas_CODE.",
+  "version": "20220203",
+  "url": "http://opencem.org/fhir/ValueSet/MeanArterialPressureMeasCODE",
+  "experimental": false,
+  "publisher": "OpenCEM Project",
+  "contact": [
+    {
+      "name": "OpenCEM Project",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://opencem.org/fhir"
+        }
+      ]
+    }
+  ],
+  "date": "2022-02-03",
+  "compose": {
+    "include": [
+      {
+        "system": "http://loinc.org",
+        "concept": [
+          {
+            "code": "8478-0",
+            "display": "Mean blood pressure"
+          }
+        ]
+      }
+    ]
+  }
+}

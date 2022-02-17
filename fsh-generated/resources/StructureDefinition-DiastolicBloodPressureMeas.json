@@ -1,0 +1,245 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "DiastolicBloodPressureMeas",
+  "url": "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas",
+  "version": "1.0.0",
+  "name": "DiastolicBloodPressureMeas",
+  "title": "DiastolicBloodPressureMeas",
+  "status": "active",
+  "description": "DiastolicBloodPressureMeas model is a measurement model.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "DiastolicBloodPressureMeas",
+        "path": "DiastolicBloodPressureMeas",
+        "short": "DiastolicBloodPressureMeas",
+        "definition": "DiastolicBloodPressureMeas model is a measurement model."
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.key",
+        "path": "DiastolicBloodPressureMeas.key",
+        "short": "DiastolicBloodPressureMeas_CODE",
+        "definition": "DiastolicBloodPressureMeas_CODE",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/DiastolicBloodPressureMeasCODE"
+        }
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.data",
+        "path": "DiastolicBloodPressureMeas.data",
+        "short": "Data",
+        "definition": "Data",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.data.quantity",
+        "path": "DiastolicBloodPressureMeas.data.quantity",
+        "short": "Quantity",
+        "definition": "Quantity",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.data.unit_code",
+        "path": "DiastolicBloodPressureMeas.data.unit_code",
+        "short": "unit_code",
+        "definition": "unit_code",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/MillimetersOfMercuryCODE"
+        }
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.bloodPressureCuffSize",
+        "path": "DiastolicBloodPressureMeas.bloodPressureCuffSize",
+        "short": "BloodPressureCuffSize",
+        "definition": "BloodPressureCuffSize",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BloodPressureCuffSizeVSET"
+        }
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.bodyLocationPrecoord",
+        "path": "DiastolicBloodPressureMeas.bodyLocationPrecoord",
+        "short": "BodyLocationPrecoord",
+        "definition": "BodyLocationPrecoord",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyLocationPrecoordVSET"
+        }
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.bodyPosition",
+        "path": "DiastolicBloodPressureMeas.bodyPosition",
+        "short": "BodyPosition",
+        "definition": "BodyPosition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyPositionVSET"
+        }
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.referenceRange",
+        "path": "DiastolicBloodPressureMeas.referenceRange",
+        "short": "ReferenceRange",
+        "definition": "ReferenceRange",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.referenceRange.lowBound",
+        "path": "DiastolicBloodPressureMeas.referenceRange.lowBound",
+        "short": "LowBound",
+        "definition": "LowBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.referenceRange.highBound",
+        "path": "DiastolicBloodPressureMeas.referenceRange.highBound",
+        "short": "HighBound",
+        "definition": "HighBound",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.referenceRange.aggregate",
+        "path": "DiastolicBloodPressureMeas.referenceRange.aggregate",
+        "short": "ReferenceRangeNar",
+        "definition": "ReferenceRangeNar",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.referenceRange.referenceRangeMeaning",
+        "path": "DiastolicBloodPressureMeas.referenceRange.referenceRangeMeaning",
+        "short": "ReferenceRangeMeaning",
+        "definition": "ReferenceRangeMeaning",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/ReferenceRangeMeaningVSET"
+        }
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.referenceRange.ageMeasQualifier",
+        "path": "DiastolicBloodPressureMeas.referenceRange.ageMeasQualifier",
+        "short": "AgeMeasQualifier",
+        "definition": "AgeMeasQualifier",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "DiastolicBloodPressureMeas.associatedPrecondition",
+        "path": "DiastolicBloodPressureMeas.associatedPrecondition",
+        "short": "AssociatedPrecondition",
+        "definition": "AssociatedPrecondition",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET"
+        }
+      }
+    ]
+  }
+}

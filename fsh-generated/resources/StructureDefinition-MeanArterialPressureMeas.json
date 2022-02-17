@@ -1,0 +1,209 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MeanArterialPressureMeas",
+  "url": "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas",
+  "version": "1.0.0",
+  "name": "MeanArterialPressureMeas",
+  "title": "MeanArterialPressureMeas",
+  "status": "active",
+  "description": "MeanArterialPressureMeas.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Element",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "MeanArterialPressureMeas",
+        "path": "MeanArterialPressureMeas",
+        "short": "MeanArterialPressureMeas",
+        "definition": "MeanArterialPressureMeas."
+      },
+      {
+        "id": "MeanArterialPressureMeas.key",
+        "path": "MeanArterialPressureMeas.key",
+        "short": "MeanArterialPressureMeas_CODE",
+        "definition": "MeanArterialPressureMeas_CODE",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/MeanArterialPressureMeasCODE"
+        }
+      },
+      {
+        "id": "MeanArterialPressureMeas.data",
+        "path": "MeanArterialPressureMeas.data",
+        "short": "Data",
+        "definition": "Data",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "MeanArterialPressureMeas.data.quantity",
+        "path": "MeanArterialPressureMeas.data.quantity",
+        "short": "Quantity",
+        "definition": "Quantity",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Quantity"
+          }
+        ]
+      },
+      {
+        "id": "MeanArterialPressureMeas.data.unit_code",
+        "path": "MeanArterialPressureMeas.data.unit_code",
+        "short": "unit_code",
+        "definition": "unit_code",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/MillimetersOfMercuryCODE"
+        }
+      },
+      {
+        "id": "MeanArterialPressureMeas.method",
+        "path": "MeanArterialPressureMeas.method",
+        "short": "Method",
+        "definition": "Method",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/MethodVSET"
+        }
+      },
+      {
+        "id": "MeanArterialPressureMeas.device",
+        "path": "MeanArterialPressureMeas.device",
+        "short": "Device",
+        "definition": "Device",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/DeviceVSET"
+        }
+      },
+      {
+        "id": "MeanArterialPressureMeas.bloodPressureCuffSize",
+        "path": "MeanArterialPressureMeas.bloodPressureCuffSize",
+        "short": "BloodPressureCuffSize",
+        "definition": "BloodPressureCuffSize",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BloodPressureCuffSizeVSET"
+        }
+      },
+      {
+        "id": "MeanArterialPressureMeas.bodyPosition",
+        "path": "MeanArterialPressureMeas.bodyPosition",
+        "short": "BodyPosition",
+        "definition": "BodyPosition",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/BodyPositionVSET"
+        }
+      },
+      {
+        "id": "MeanArterialPressureMeas.abnormalInterpretation",
+        "path": "MeanArterialPressureMeas.abnormalInterpretation",
+        "short": "AbnormalInterpretation",
+        "definition": "AbnormalInterpretation",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AbnormalInterpretationVSET"
+        }
+      },
+      {
+        "id": "MeanArterialPressureMeas.referenceRangeNar",
+        "path": "MeanArterialPressureMeas.referenceRangeNar",
+        "short": "ReferenceRangeNar",
+        "definition": "ReferenceRangeNar",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "MeanArterialPressureMeas.associatedPrecondition",
+        "path": "MeanArterialPressureMeas.associatedPrecondition",
+        "short": "AssociatedPrecondition",
+        "definition": "AssociatedPrecondition",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://opencem.org/fhir/ValueSet/AssociatedPreconditionVSET"
+        }
+      }
+    ]
+  }
+}

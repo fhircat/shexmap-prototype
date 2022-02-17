@@ -3,16 +3,39 @@
     "meta": {
       "profile": [ "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel" ]
     },
+    "key": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "85354-9",
+        "display": "Blood Pressure Panel with all children optional"
+      } ],
+      "text": "Blood Pressure Panel with all children optional"
+    },
     "sbp": {
       "resourceType": "SystolicBloodPressureMeas",
       "meta": {
         "profile": [ "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas" ]
       },
-      "quantity": {
-        "value": 120,
-        "unit": "mm[Hg]",
-        "system": "http://unitsofmeasure.org",
-        "code": "mm[Hg]"
+      "key": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8480-6",
+          "display": "Systolic Blood Pressure"
+        } ],
+        "text": "Systolic Blood Pressure"
+      },
+      "data": {
+        "quantity": {
+          "value": 120
+        },
+        "unit_code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8462-4",
+            "display": "mm[Hg]"
+          } ],
+          "text": "mm[Hg]"
+        }
       }
     },
     "dbp": {
@@ -20,11 +43,26 @@
       "meta": {
         "profile": [ "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas" ]
       },
-      "quantity": {
-        "value": 80,
-        "unit": "mm[Hg]",
-        "system": "http://unitsofmeasure.org",
-        "code": "mm[Hg]"
+      "key": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8462-4",
+          "display": "Diastolic Blood Pressure"
+        } ],
+        "text": "Diastolic Blood Pressure"
+      },
+      "data": {
+        "quantity": {
+          "value": 80
+        },
+        "unit_code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8462-4",
+            "display": "mm[Hg]"
+          } ],
+          "text": "mm[Hg]"
+        }
       }
     },
     "meanArterialPressureMeas": {
@@ -32,11 +70,26 @@
       "meta": {
         "profile": [ "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas" ]
       },
-      "quantity": {
-        "value": 93.3,
-        "unit": "mm[Hg]",
-        "system": "http://unitsofmeasure.org",
-        "code": "mm[Hg]"
+      "key": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8478-0",
+          "display": "Mean blood pressure"
+        } ],
+        "text": "Mean blood pressure"
+      },
+      "data": {
+        "quantity": {
+          "value": 93.3
+        },
+        "unit_code": {
+          "coding": [ {
+            "system": "http://loinc.org",
+            "code": "8462-4",
+            "display": "mm[Hg]"
+          } ],
+          "text": "mm[Hg]"
+        }
       }
     },
     "bloodPressureCuffSize": {
@@ -73,4 +126,3 @@
     },
     "comment": "This is a blood pressure panel logical model example."
   }
-  
