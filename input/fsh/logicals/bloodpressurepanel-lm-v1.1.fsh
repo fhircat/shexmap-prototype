@@ -8,10 +8,10 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * sbp 1..1 SU BackboneElement "SystolicBloodPressureMeas"
 * sbp.key 0..1 CodeableConcept "SystolicBloodPressureMeas_CODE"
 * sbp.key from SystolicBloodPressureMeasCODE
-* sbp.data 1..1 SU BackboneElement "Data"
-* sbp.data.quantity 1..1 Quantity "Quantity"
-* sbp.data.unit_code 0..1 CodeableConcept "unit_code"
-* sbp.data.unit_code from MillimetersOfMercuryCODE
+* sbp.quantity 1..1 SU BackboneElement "Data"
+* sbp.quantity.value 1..1 decimal "Quantity value"
+* sbp.quantity.unit_code 0..1 CodeableConcept "unit_code"
+* sbp.quantity.unit_code from MillimetersOfMercuryCODE
 * sbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
 * sbp.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * sbp.bodyLocationPrecoord 0..1 CodeableConcept "BodyLocationPrecoord"
@@ -30,10 +30,10 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * dbp 0..1 SU BackboneElement "DiastolicBloodPressureMeas"
 * dbp.key 0..1 CodeableConcept "DiastolicBloodPressureMeas_CODE"
 * dbp.key from DiastolicBloodPressureMeasCODE
-* dbp.data 1..1 SU BackboneElement "Data"
-* dbp.data.quantity 1..1 Quantity "Quantity"
-* dbp.data.unit_code 0..1 CodeableConcept "unit_code"
-* dbp.data.unit_code from MillimetersOfMercuryCODE
+* dbp.quantity 1..1 SU BackboneElement "Data"
+* dbp.quantity.value 1..1 decimal "Quantity value"
+* dbp.quantity.unit_code 0..1 CodeableConcept "unit_code"
+* dbp.quantity.unit_code from MillimetersOfMercuryCODE
 * dbp.bloodPressureCuffSize 0..1 CodeableConcept "BloodPressureCuffSize"
 * dbp.bloodPressureCuffSize from BloodPressureCuffSizeVSET
 * dbp.bodyLocationPrecoord 0..1 CodeableConcept "BodyLocationPrecoord"
@@ -52,10 +52,10 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * meanArterialPressureMeas 0..1 SU BackboneElement "MeanArterialPressureMeas"
 * meanArterialPressureMeas.key 0..1 CodeableConcept "MeanArterialPressureMeas_CODE"
 * meanArterialPressureMeas.key from MeanArterialPressureMeasCODE
-* meanArterialPressureMeas.data 1..1 SU BackboneElement "Data"
-* meanArterialPressureMeas.data.quantity 1..1 Quantity "Quantity"
-* meanArterialPressureMeas.data.unit_code 0..1 CodeableConcept "unit_code"
-* meanArterialPressureMeas.data.unit_code from MillimetersOfMercuryCODE
+* meanArterialPressureMeas.quantity 1..1 SU BackboneElement "Data"
+* meanArterialPressureMeas.quantity.value 1..1 decimal "Quantity value"
+* meanArterialPressureMeas.quantity.unit_code 0..1 CodeableConcept "unit_code"
+* meanArterialPressureMeas.quantity.unit_code from MillimetersOfMercuryCODE
 * meanArterialPressureMeas.method 0..1 CodeableConcept "Method"
 * meanArterialPressureMeas.method from MethodVSET
 * meanArterialPressureMeas.device 0..1 CodeableConcept "Device"
@@ -88,8 +88,8 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * cardiacArrhythmiaIndicator 0..1 CodeableConcept "CardiacArrhythmiaIndicator"
 * cardiacArrhythmiaIndicator from PresentAbsentVSET
 * focalSubject 0..1 SU BackboneElement "FocalSubject"
-* focalSubject.data 0..1 CodeableConcept "Data"
-* focalSubject.data from FocalSubjectVSET
+* focalSubject.code 0..1 CodeableConcept "Data"
+* focalSubject.code from FocalSubjectVSET
 * focalSubject.personIdentifier 0..* Identifier "PersonIdentifier"
 * focalSubject.simpleName 0..1 string "SimpleName"
 * comment 0..1 string "Comment"

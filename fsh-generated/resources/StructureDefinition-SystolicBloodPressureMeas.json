@@ -46,8 +46,8 @@
         }
       },
       {
-        "id": "SystolicBloodPressureMeas.data",
-        "path": "SystolicBloodPressureMeas.data",
+        "id": "SystolicBloodPressureMeas.quantity",
+        "path": "SystolicBloodPressureMeas.quantity",
         "short": "Data",
         "definition": "Data",
         "min": 1,
@@ -60,21 +60,21 @@
         "isSummary": true
       },
       {
-        "id": "SystolicBloodPressureMeas.data.quantity",
-        "path": "SystolicBloodPressureMeas.data.quantity",
-        "short": "Quantity",
-        "definition": "Quantity",
+        "id": "SystolicBloodPressureMeas.quantity.value",
+        "path": "SystolicBloodPressureMeas.quantity.value",
+        "short": "Quantity value",
+        "definition": "Quantity value",
         "min": 1,
         "max": "1",
         "type": [
           {
-            "code": "Quantity"
+            "code": "decimal"
           }
         ]
       },
       {
-        "id": "SystolicBloodPressureMeas.data.unit_code",
-        "path": "SystolicBloodPressureMeas.data.unit_code",
+        "id": "SystolicBloodPressureMeas.quantity.unit_code",
+        "path": "SystolicBloodPressureMeas.quantity.unit_code",
         "short": "unit_code",
         "definition": "unit_code",
         "min": 0,

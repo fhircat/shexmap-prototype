@@ -246,6 +246,20 @@
         "max": "1",
         "type": [
           {
+            "code": "BackboneElement"
+          }
+        ],
+        "isSummary": true
+      },
+      {
+        "id": "BloodPressurePanel.focalSubject.code",
+        "path": "BloodPressurePanel.focalSubject.code",
+        "short": "Data",
+        "definition": "Data",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
             "code": "CodeableConcept"
           }
         ],
@@ -253,6 +267,32 @@
           "strength": "required",
           "valueSet": "http://opencem.org/fhir/ValueSet/FocalSubjectVSET"
         }
+      },
+      {
+        "id": "BloodPressurePanel.focalSubject.personIdentifier",
+        "path": "BloodPressurePanel.focalSubject.personIdentifier",
+        "short": "PersonIdentifier",
+        "definition": "PersonIdentifier",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "BloodPressurePanel.focalSubject.simpleName",
+        "path": "BloodPressurePanel.focalSubject.simpleName",
+        "short": "SimpleName",
+        "definition": "SimpleName",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
       },
       {
         "id": "BloodPressurePanel.comment",
@@ -309,58 +349,6 @@
           "strength": "required",
           "valueSet": "http://opencem.org/fhir/ValueSet/StatusVSET"
         }
-      },
-      {
-        "id": "BloodPressurePanel.reportedReceived",
-        "path": "BloodPressurePanel.reportedReceived",
-        "short": "ReportedReceived",
-        "definition": "ReportedReceived",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "BloodPressurePanel.observed",
-        "path": "BloodPressurePanel.observed",
-        "short": "Observed",
-        "definition": "Observed",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "BloodPressurePanel.performed",
-        "path": "BloodPressurePanel.performed",
-        "short": "Performed",
-        "definition": "Performed",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
-      },
-      {
-        "id": "BloodPressurePanel.verified",
-        "path": "BloodPressurePanel.verified",
-        "short": "Verified",
-        "definition": "Verified",
-        "min": 0,
-        "max": "*",
-        "type": [
-          {
-            "code": "code"
-          }
-        ]
       }
     ]
   }

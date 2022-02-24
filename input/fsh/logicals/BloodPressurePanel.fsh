@@ -26,14 +26,13 @@ Description: "BloodPressurePanel is an Associated CEM Panel that groups a systol
 * exerciseAssociation from ExerciseAssociationVSET
 * cardiacArrhythmiaIndicator 0..1 CodeableConcept "CardiacArrhythmiaIndicator"
 * cardiacArrhythmiaIndicator from PresentAbsentVSET
-* focalSubject 0..1 CodeableConcept "FocalSubject"
-* focalSubject from FocalSubjectVSET
+* focalSubject 0..1 SU BackboneElement "FocalSubject"
+* focalSubject.code 0..1 CodeableConcept "Data"
+* focalSubject.code from FocalSubjectVSET
+* focalSubject.personIdentifier 0..* Identifier "PersonIdentifier"
+* focalSubject.simpleName 0..1 string "SimpleName"
 * comment 0..1 string "Comment"
 * externalIdentifier 0..1 Identifier "ExternalIdentifier"
 * patientIdentifier 0..1 Identifier "PatientIdentifier"
 * status 0..1 CodeableConcept "Status"
 * status from Status_VSET
-* reportedReceived 0..* code "ReportedReceived"
-* observed 0..* code "Observed"
-* performed 0..* code "Performed"
-* verified 0..* code "Verified"

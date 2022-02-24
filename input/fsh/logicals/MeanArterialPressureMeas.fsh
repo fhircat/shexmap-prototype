@@ -5,10 +5,10 @@ Title: "MeanArterialPressureMeas"
 Description: "MeanArterialPressureMeas."
 * key 0..1 CodeableConcept "MeanArterialPressureMeas_CODE"
 * key from MeanArterialPressureMeasCODE
-* data 1..1 SU BackboneElement "Data"
-* data.quantity 1..1 Quantity "Quantity"
-* data.unit_code 0..1 CodeableConcept "unit_code"
-* data.unit_code from MillimetersOfMercuryCODE
+* quantity 1..1 SU BackboneElement "Data"
+* quantity.value 1..1 decimal "Quantity value"
+* quantity.unit_code 0..1 CodeableConcept "unit_code"
+* quantity.unit_code from MillimetersOfMercuryCODE
 * method 0..1 CodeableConcept "Method"
 * method from MethodVSET
 * device 0..1 CodeableConcept "Device"

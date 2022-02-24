@@ -46,8 +46,8 @@
         }
       },
       {
-        "id": "MeanArterialPressureMeas.data",
-        "path": "MeanArterialPressureMeas.data",
+        "id": "MeanArterialPressureMeas.quantity",
+        "path": "MeanArterialPressureMeas.quantity",
         "short": "Data",
         "definition": "Data",
         "min": 1,
@@ -60,21 +60,21 @@
         "isSummary": true
       },
       {
-        "id": "MeanArterialPressureMeas.data.quantity",
-        "path": "MeanArterialPressureMeas.data.quantity",
-        "short": "Quantity",
-        "definition": "Quantity",
+        "id": "MeanArterialPressureMeas.quantity.value",
+        "path": "MeanArterialPressureMeas.quantity.value",
+        "short": "Quantity value",
+        "definition": "Quantity value",
         "min": 1,
         "max": "1",
         "type": [
           {
-            "code": "Quantity"
+            "code": "decimal"
           }
         ]
       },
       {
-        "id": "MeanArterialPressureMeas.data.unit_code",
-        "path": "MeanArterialPressureMeas.data.unit_code",
+        "id": "MeanArterialPressureMeas.quantity.unit_code",
+        "path": "MeanArterialPressureMeas.quantity.unit_code",
         "short": "unit_code",
         "definition": "unit_code",
         "min": 0,

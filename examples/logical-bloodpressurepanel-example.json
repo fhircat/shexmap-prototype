@@ -1,128 +1,122 @@
 {
-    "resourceType": "BloodPressurePanel",
+  "resourceType": "BloodPressurePanel",
+  "meta": {
+    "profile": [ "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel" ]
+  },
+  "key": {
+    "coding": [ {
+      "system": "http://loinc.org",
+      "code": "85354-9",
+      "display": "Blood Pressure Panel with all children optional"
+    } ],
+    "text": "Blood Pressure Panel with all children optional"
+  },
+  "sbp": {
+    "resourceType": "SystolicBloodPressureMeas",
     "meta": {
-      "profile": [ "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel" ]
+      "profile": [ "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas" ]
     },
     "key": {
       "coding": [ {
         "system": "http://loinc.org",
-        "code": "85354-9",
-        "display": "Blood Pressure Panel with all children optional"
+        "code": "8480-6",
+        "display": "Systolic Blood Pressure"
       } ],
-      "text": "Blood Pressure Panel with all children optional"
+      "text": "Systolic Blood Pressure"
     },
-    "sbp": {
-      "resourceType": "SystolicBloodPressureMeas",
-      "meta": {
-        "profile": [ "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas" ]
-      },
-      "key": {
-        "coding": [ {
-          "system": "http://loinc.org",
-          "code": "8480-6",
-          "display": "Systolic Blood Pressure"
-        } ],
-        "text": "Systolic Blood Pressure"
-      },
-      "data": {
-        "quantity": {
-          "value": 120
-        },
-        "unit_code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "8462-4",
-            "display": "mm[Hg]"
-          } ],
-          "text": "mm[Hg]"
-        }
-      }
-    },
-    "dbp": {
-      "resourceType": "DiastolicBloodPressureMeas",
-      "meta": {
-        "profile": [ "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas" ]
-      },
-      "key": {
+    "quantity": {
+      "value": 120,
+      "unit_code": {
         "coding": [ {
           "system": "http://loinc.org",
           "code": "8462-4",
-          "display": "Diastolic Blood Pressure"
+          "display": "mm[Hg]"
         } ],
-        "text": "Diastolic Blood Pressure"
-      },
-      "data": {
-        "quantity": {
-          "value": 80
-        },
-        "unit_code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "8462-4",
-            "display": "mm[Hg]"
-          } ],
-          "text": "mm[Hg]"
-        }
+        "text": "mm[Hg]"
       }
+    }
+  },
+  "dbp": {
+    "resourceType": "DiastolicBloodPressureMeas",
+    "meta": {
+      "profile": [ "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas" ]
     },
-    "meanArterialPressureMeas": {
-      "resourceType": "MeanArterialPressureMeas",
-      "meta": {
-        "profile": [ "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas" ]
-      },
-      "key": {
+    "key": {
+      "coding": [ {
+        "system": "http://loinc.org",
+        "code": "8462-4",
+        "display": "Diastolic Blood Pressure"
+      } ],
+      "text": "Diastolic Blood Pressure"
+    },
+    "quantity": {
+      "value": 80,
+      "unit_code": {
         "coding": [ {
           "system": "http://loinc.org",
-          "code": "8478-0",
-          "display": "Mean blood pressure"
+          "code": "8462-4",
+          "display": "mm[Hg]"
         } ],
-        "text": "Mean blood pressure"
-      },
-      "data": {
-        "quantity": {
-          "value": 93.3
-        },
-        "unit_code": {
-          "coding": [ {
-            "system": "http://loinc.org",
-            "code": "8462-4",
-            "display": "mm[Hg]"
-          } ],
-          "text": "mm[Hg]"
-        }
+        "text": "mm[Hg]"
       }
+    }
+  },
+  "meanArterialPressureMeas": {
+    "resourceType": "MeanArterialPressureMeas",
+    "meta": {
+      "profile": [ "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas" ]
     },
-    "bloodPressureCuffSize": {
+    "key": {
       "coding": [ {
-        "system": "http://snomed.info/sct",
-        "code": "720738005",
-        "display": "Blood pressure cuff, adult size large (physical object)"
+        "system": "http://loinc.org",
+        "code": "8478-0",
+        "display": "Mean blood pressure"
       } ],
-      "text": "Blood pressure cuff, adult size large (physical object)"
+      "text": "Mean blood pressure"
     },
-    "bodyPosition": {
-      "coding": [ {
-        "system": "http://snomed.info/sct",
-        "code": "720738005",
-        "display": "Blood pressure cuff, adult size large (physical object)"
-      } ],
-      "text": "Sitting Position"
-    },
-    "sleepStatus": {
-      "coding": [ {
-        "system": "http://snomed.info/sct",
-        "code": "248218005",
-        "display": "Awake"
-      } ],
-      "text": "Awake"
-    },
-    "exerciseAssociation": {
-      "coding": [ {
-        "system": "http://snomed.info/sct",
-        "code": "263678003",
-        "display": "At rest"
-      } ],
-      "text": "At rest"
-    },
-    "comment": "This is a blood pressure panel logical model example."
-  }
+    "quantity": {
+      "value": 93.3,
+      "unit_code": {
+        "coding": [ {
+          "system": "http://loinc.org",
+          "code": "8462-4",
+          "display": "mm[Hg]"
+        } ],
+        "text": "mm[Hg]"
+      }
+    }
+  },
+  "bloodPressureCuffSize": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "720738005",
+      "display": "Blood pressure cuff, adult size large (physical object)"
+    } ],
+    "text": "Blood pressure cuff, adult size large (physical object)"
+  },
+  "bodyPosition": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "720738005",
+      "display": "Blood pressure cuff, adult size large (physical object)"
+    } ],
+    "text": "Sitting Position"
+  },
+  "sleepStatus": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "248218005",
+      "display": "Awake"
+    } ],
+    "text": "Awake"
+  },
+  "exerciseAssociation": {
+    "coding": [ {
+      "system": "http://snomed.info/sct",
+      "code": "263678003",
+      "display": "At rest"
+    } ],
+    "text": "At rest"
+  },
+  "comment": "This is a blood pressure panel logical model example."
+}
