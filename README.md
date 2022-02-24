@@ -9,7 +9,7 @@ ShExMap-based Data Transformation Engine
 * Blood Pressure Panel - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/bloodpressurepanel-lm-v1.1.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-BloodPressurePanelLM.json)) ([Tree Structure](https://simplifier.net/ddionfhir/bloodpressurepanellm))
 * Blood Pressure Panel Example - ([JSON](https://github.com/fhircat/shexmap-prototype/blob/main/examples/logical-bloodpressurepanel-example.json))
 
-![](https://github.com/fhircat/shexmap-prototype/blob/main/logical-model-diagram-v1.1.png)
+![](https://github.com/fhircat/shexmap-prototype/blob/main/logical-model-diagram-v1.2.png)
 
 ### A composite model
 * Blood Pressure Panel - ([FSH](https://github.com/fhircat/shexmap-prototype/blob/main/input/fsh/logicals/BloodPressurePanel.fsh))  ([StructureDefinition](https://github.com/fhircat/shexmap-prototype/blob/main/fsh-generated/resources/StructureDefinition-BloodPressurePanel.json))
