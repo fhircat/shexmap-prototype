@@ -1,0 +1,343 @@
+id: SystolicBloodPressureMeas_id
+name: SystolicBloodPressureMeas_schema
+prefixes:
+  linkml: https://w3id.org/linkml/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  schema: http://schema.org/
+  loinc: http://loinc.org/
+  sct: http://snomed.info/sct/
+  fhir: http://hl7.org/fhir/
+  sd: http://opencem.org/fhir/StructureDefinition/
+  vs: http://opencem.org/fhir/ValueSet/
+  # DATA PREFIXES
+  sbp: http://example.org/sbp/
+default_prefix: sd
+imports:
+  - linkml:types
+# classes are the main organization until for data;
+# all data records instantiate a class
+classes:
+  Entity:
+    name: Entity
+    description: Any resource that has its own identifier
+    notes:
+    - Derived from [Entity in sheet Entity](https://docs.google.com/spreadsheets/d/1oWS7cao-fgz2MKWtyr8h2dEL9unX__0bJrWKv6mQmM4/edit#gid=65213867)
+    attributes:
+      - id
+  Quantity:
+    class_uri: fhir:Quantity
+    name: Quantity
+    description: A structured object to represent an amount of something (e.g., weight,
+      mass, length, duration of time) - including a value and unit.
+    notes:
+    - Derived from [Quantity in sheet Quantity](https://docs.google.com/spreadsheets/d/1oWS7cao-fgz2MKWtyr8h2dEL9unX__0bJrWKv6mQmM4/edit#gid=1941950611)
+    comments:
+    - QuantityMeasure' may be implemented as an Observation-like object that will
+      let us capture any type of measure of the amount of some substance (e.g. weight,
+      volume, maybe even concentration?), with distinct timestamps and methods associated.  It
+      could be implemented as a "simple" observation (one measurement per instance,
+      where the 'code' fields is bound to a value set describing the different types
+      of quantity measures allowed -  e.g. 'weight', 'volume', 'concentration'),  or
+      as "composite" observation (multiple measurements possible in a single instance,
+      each captured as a component defined to hold a specific type of quantity measure
+      - e.g.  'weight', 'volume', 'concentration').  The number of different quantity
+      measures we anticipate needed to support, and the potential for data sparseness,
+      are factors that determine whether a simple or composite Observation would be
+      most appropriate.
+    is_a: Entity
+    attributes:
+      id:
+        identifier: true
+      value_decimal:
+        name: value_decimal
+        description: An amount, in the given units (if specified)
+        notes:
+        - 'Cardinality: 0..1'
+        examples:
+        - value: ''
+        domain: Quantity
+        multivalued: false
+        range: decimal
+        required: false
+      value_codeable_concept:
+        name: value_codeable_concept
+        description: A coded value representing a quantity (e.g. "Adjacent (< or =
+          2cm)")
+        notes:
+        - 'Cardinality: 0..1'
+        examples:
+        - value: ''
+        #values_from: crdch:enum_CRDCH_Quantity_value_codeable_concept
+        domain: Quantity
+        multivalued: false
+        range: CodeableConcept
+        required: false
+      unit:
+        name: unit
+        description: A coded or free text (in the .text field) representation of the
+          unit.
+        notes:
+        - 'Cardinality: 0..1'
+        examples:
+        - value: ''
+        #values_from: crdch:enum_CRDCH_Quantity_unit
+        domain: Quantity
+        multivalued: false
+        range: CodeableConcept
+        required: false
+  CodeableConcept:
+    class_uri: fhir:CodeableConcept
+    name: CodeableConcept
+    description: A representation of a concept that may be defined by or mapped to
+      one or more codes in code systems (terminologies, ontologies, dictionaries,
+      code sets, etc) - but may also be defined by the provision of text.
+    notes:
+    - Derived from [CodeableConcept in sheet CodeableConcept](https://docs.google.com/spreadsheets/d/1oWS7cao-fgz2MKWtyr8h2dEL9unX__0bJrWKv6mQmM4/edit#gid=1820375300)
+    comments:
+    - 'More than one code may be used in CodeableConcept. The concept may be coded
+      multiple times in different code systems (or even multiple times in the same
+      code systems, where multiple forms are possible). Each Coding is a representation
+      of the concept as described above and may have slightly different granularity
+      due to the differences in the definitions of the underlying codes. There is
+      no meaning associated with the ordering of Coding within a CodeableConcept.
+      A typical use of CodeableConcept is to send the local code that the concept
+      was coded with, and also one or more translations to publicly defined code systems
+      such as LOINC or SNOMED CT.' 
+    is_a: Entity
+    attributes:
+      id:
+        identifier: true
+      coding:
+        name: coding
+        description: A reference to a code defined by a terminology system
+        notes:
+        - 'Cardinality: 0..m'
+        examples:
+        - value: ''
+        domain: CodeableConcept
+        multivalued: true
+        inlined_as_list: true
+        range: Coding
+        required: false
+      text:
+        name: text
+        description: A human language representation of the concept represented by
+          the Coding.
+        notes:
+        - 'Cardinality: 0..1'
+        comments:
+        - 'The text attribute represents the concept as entered or chosen by the user;
+          often the value of text is the same as a display of one of the codings.  A
+          concept that does not have an appropriate or known coding can be represented
+          using free-text in the text attribute. '
+        examples:
+        - value: ''
+        domain: CodeableConcept
+        multivalued: false
+        range: string
+        required: false
+  Coding:
+    class_uri: fhir:Coding
+    name: Coding
+    description: A structured representation of a coded/enumerated data value, that
+      includes additional metadata about the code and code system.
+    notes:
+    - Derived from [Coding in sheet Coding](https://docs.google.com/spreadsheets/d/1oWS7cao-fgz2MKWtyr8h2dEL9unX__0bJrWKv6mQmM4/edit#gid=1218588936)
+    is_a: Entity
+    attributes:
+      id:
+        identifier: true 
+      code:
+        name: code
+        description: The symbol/value of the code, as defined by the code system.
+        notes:
+        - 'Cardinality: 1..1'
+        examples:
+        - value: ''
+        domain: Coding
+        multivalued: false
+        range: string
+        required: false
+      label:
+        name: label
+        description: A human-readable name for the code, as defined by the code system.
+        notes:
+        - 'Cardinality: 0..1'
+        examples:
+        - value: ''
+        domain: Coding
+        multivalued: false
+        range: string
+        required: false
+      system:
+        name: system
+        description: The URL of the code system where the code is defined.
+        notes:
+        - 'Cardinality: 1..1'
+        examples:
+        - value: ''
+        domain: Coding
+        multivalued: false
+        range: string
+        required: false
+      system_version:
+        name: system_version
+        description: The version of the code system.
+        notes:
+        - 'Cardinality: 0..1'
+        examples:
+        - value: ''
+        domain: Coding
+        multivalued: false
+        range: string
+        required: false
+      value_set:
+        name: value_set
+        description: The identifier of the enumeration / value set that the code is
+          a part of in the context of this element
+        notes:
+        - 'Cardinality: 0..1'
+        examples:
+        - value: ''
+        domain: Coding
+        multivalued: false
+        range: string
+        required: false
+      value_set_version:
+        name: value_set_version
+        description: The version of the enuemration / value set the code is pulled
+          from
+        notes:
+        - 'Cardinality: 0..1'
+        examples:
+        - value: ''
+        domain: Coding
+        multivalued: false
+        range: string
+        required: false
+      tag:
+        name: tag
+        description: original value  |  harmonized value  |
+        notes:
+        - 'Cardinality: 0..m'
+        examples:
+        - value: ''
+        domain: Coding
+        multivalued: true
+        inlined_as_list: true
+        range: string
+        required: false       
+  DataQuantity:
+    class_uri: sd:DataQuantity
+    is_a: Entity
+    attributes:
+      id:
+        identifier: true
+      quantity:
+        range: Quantity
+      unit_code:
+        range: CodeableConcept
+  ReferenceRange:
+    class_uri: sd:ReferenceRange
+    is_a: Entity
+    attributes:
+      lowBound: 
+        range: Quantity
+      highBound: 
+        range: Quantity
+      aggregate: 
+        range: string
+      referenceRangeMeaning:
+        range: CodeableConcept
+      ageMeasQualifier: 
+        range: Quantity     
+  SystolicBloodPressureMeas:
+    class_uri: sd:SystolicBloodPressureMeas
+    #tree_root: true
+    is_a: Entity
+    attributes:
+      id:
+        identifier: true
+      key:
+        range: CodeableConcept
+      data:
+        range: DataQuantity     
+      bloodPressureCuffSize:
+        range: CodeableConcept
+      bodyLocationPrecoord:
+        range: CodeableConcept
+      bodyPosition:
+        range: CodeableConcept
+      referenceRange: 
+        range: ReferenceRange
+      associatedPrecondition:
+        range: CodeableConcept
+  # TODO: annotate that this is a container/root class
+  Container:
+    tree_root: true
+    slots:
+      - systolicBloodPressureMeasInstances
+      - codeableConcepts
+      - codings
+      - quantities
+      - dataQuantities
+
+slots:
+  id:
+    identifier: true
+    slot_uri: fhir:Identifier
+  systolicBloodPressureMeasInstances:
+    range: SystolicBloodPressureMeas
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+  codeableConcepts:
+    range: CodeableConcept
+    inlined_as_list: true
+    inlined: true
+    multivalued: true
+  codings:
+    range: Coding
+    inlined_as_list: true
+    inlined: true
+    multivalued: true
+  quantities:
+    range: Quantity
+    inlined_as_list: true
+    inlined: true
+    multivalued: true 
+  dataQuantities:
+    range: DataQuantity
+    inlined_as_list: true
+    inlined: true
+    multivalued: true   
+# enumerations
+enums:
+  SystolicBloodPressureMeasCODE:
+    permissible_values:
+      SystolicBloodPressureMeasCODE:
+        meaning: loinc:8480-6
+  MillimetersOfMercuryCODE:
+    permissible_values:
+      MillimetersOfMercuryCODE:
+        meaning: loinc:8462-4
+  BloodPressureCuffSizeVSET:
+    permissible_values:
+      large:
+      small:
+  BodyLocationPrecoordVSET:
+    permissible_values:
+      bodylocation_a:
+      bodylocation_b:
+  BodyPositionVSET:
+    permissible_values:
+      bodyposition_a:
+      bodyposition_b:
+  ReferenceRangeMeaningVSET:
+    permissible_values:
+      rangemeaning_a:
+      rangemeaning_b:
+  AssociatedPreconditionVSET:
+    permissible_values:
+      precondition_a:
+      precondition_b:

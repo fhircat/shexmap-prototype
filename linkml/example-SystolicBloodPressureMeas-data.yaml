@@ -1,0 +1,37 @@
+systolicBloodPressureMeasInstances:
+  - id: sbp:sbp01
+    key: sbp:cc01
+    data: sbp:dq01
+    bloodPressureCuffSize: sbp:cc03
+quantities:
+  - id: sbp:quan01
+    value_decimal: 120
+  - id: sbp:quan02
+    value_decimal: 80
+dataQuantities:
+  - id: sbp:dq01
+    quantity: sbp:quan01
+    unit_code: sbp:coding02
+codeableConcepts:
+  - id: sbp:cc01
+    coding: sbp:coding01
+    text: Systolic Blood Pressure
+  - id: sbp:cc02
+    coding: sbp:coding02
+    text: mm[Hg]
+  - id: sbp:cc03
+    coding: sbp:coding03
+    text: Blood pressure cuff, adult size large (physical object)
+codings:
+  - id: sbp:coding01
+    code: 8480-6
+    label: Systolic Blood Pressure
+    system: http://loinc.org
+  - id: sbp:coding02
+    code: 8462-4
+    label: mm[Hg]
+    system: http://loinc.org
+  - id: sbp:coding03
+    code: 720738005
+    label: Blood pressure cuff, adult size large (physical object)
+    system: http://snomed.info/sct

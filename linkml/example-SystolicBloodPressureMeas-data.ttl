@@ -1,0 +1,57 @@
+@prefix ns1: <http://opencem.org/fhir/StructureDefinition/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/sbp/cc02> a <http://hl7.org/fhir/CodeableConcept> ;
+    ns1:coding <http://example.org/sbp/coding02> ;
+    ns1:text "mm[Hg]" .
+
+<http://example.org/sbp/quan02> a <http://hl7.org/fhir/Quantity> ;
+    ns1:value_decimal 80.0 .
+
+<http://example.org/sbp/sbp01> a ns1:SystolicBloodPressureMeas ;
+    ns1:bloodPressureCuffSize <http://example.org/sbp/cc03> ;
+    ns1:data <http://example.org/sbp/dq01> ;
+    ns1:key <http://example.org/sbp/cc01> .
+
+<http://example.org/sbp/cc01> a <http://hl7.org/fhir/CodeableConcept> ;
+    ns1:coding <http://example.org/sbp/coding01> ;
+    ns1:text "Systolic Blood Pressure" .
+
+<http://example.org/sbp/cc03> a <http://hl7.org/fhir/CodeableConcept> ;
+    ns1:coding <http://example.org/sbp/coding03> ;
+    ns1:text "Blood pressure cuff, adult size large (physical object)" .
+
+<http://example.org/sbp/coding01> a <http://hl7.org/fhir/Coding> ;
+    ns1:code "8480-6" ;
+    ns1:label "Systolic Blood Pressure" ;
+    ns1:system "http://loinc.org" .
+
+<http://example.org/sbp/coding03> a <http://hl7.org/fhir/Coding> ;
+    ns1:code "720738005" ;
+    ns1:label "Blood pressure cuff, adult size large (physical object)" ;
+    ns1:system "http://snomed.info/sct" .
+
+<http://example.org/sbp/dq01> a ns1:DataQuantity ;
+    ns1:quantity <http://example.org/sbp/quan01> ;
+    ns1:unit_code <http://example.org/sbp/coding02> .
+
+<http://example.org/sbp/quan01> a <http://hl7.org/fhir/Quantity> ;
+    ns1:value_decimal 120.0 .
+
+<http://example.org/sbp/coding02> a <http://hl7.org/fhir/Coding> ;
+    ns1:code "8462-4" ;
+    ns1:label "mm[Hg]" ;
+    ns1:system "http://loinc.org" .
+
+[] a ns1:Container ;
+    ns1:codeableConcepts <http://example.org/sbp/cc01>,
+        <http://example.org/sbp/cc02>,
+        <http://example.org/sbp/cc03> ;
+    ns1:codings <http://example.org/sbp/coding01>,
+        <http://example.org/sbp/coding02>,
+        <http://example.org/sbp/coding03> ;
+    ns1:dataQuantities <http://example.org/sbp/dq01> ;
+    ns1:quantities <http://example.org/sbp/quan01>,
+        <http://example.org/sbp/quan02> ;
+    ns1:systolicBloodPressureMeasInstances <http://example.org/sbp/sbp01> .
+

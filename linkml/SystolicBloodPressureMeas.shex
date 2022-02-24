@@ -1,0 +1,128 @@
+# metamodel_version: 1.7.0
+BASE <http://opencem.org/fhir/StructureDefinition/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX linkml: <https://w3id.org/linkml/>
+PREFIX fhir: <http://hl7.org/fhir/>
+
+
+linkml:String xsd:string
+
+linkml:Integer xsd:integer
+
+linkml:Boolean xsd:boolean
+
+linkml:Float xsd:float
+
+linkml:Double xsd:double
+
+linkml:Decimal xsd:decimal
+
+linkml:Time xsd:dateTime
+
+linkml:Date xsd:date
+
+linkml:Datetime xsd:dateTime
+
+linkml:Uriorcurie IRI
+
+linkml:Uri IRI
+
+linkml:Ncname xsd:string
+
+linkml:Objectidentifier IRI
+
+linkml:Nodeidentifier NONLITERAL
+
+<CodeableConcept> CLOSED {
+    (  $<CodeableConcept_tes> (  &<Entity_tes> ;
+          rdf:type [ <Entity> ] ? ;
+          <coding> @<Coding> * ;
+          <text> @linkml:String ?
+       ) ;
+       rdf:type [ fhir:CodeableConcept ]
+    )
+}
+
+<Coding> CLOSED {
+    (  $<Coding_tes> (  &<Entity_tes> ;
+          rdf:type [ <Entity> ] ? ;
+          <code> @linkml:String ? ;
+          <label> @linkml:String ? ;
+          <system> @linkml:String ? ;
+          <system_version> @linkml:String ? ;
+          <value_set> @linkml:String ? ;
+          <value_set_version> @linkml:String ? ;
+          <tag> @linkml:String *
+       ) ;
+       rdf:type [ fhir:Coding ]
+    )
+}
+
+<Container> CLOSED {
+    (  $<Container_tes> (  <systolicBloodPressureMeasInstances> @<SystolicBloodPressureMeas> * ;
+          <codeableConcepts> @<CodeableConcept> * ;
+          <codings> @<Coding> * ;
+          <quantities> @<Quantity> * ;
+          <dataQuantities> @<DataQuantity> *
+       ) ;
+       rdf:type [ <Container> ] ?
+    )
+}
+
+<DataQuantity> CLOSED {
+    (  $<DataQuantity_tes> (  &<Entity_tes> ;
+          rdf:type [ <Entity> ] ? ;
+          <quantity> @<Quantity> ? ;
+          <unit_code> @<CodeableConcept> ?
+       ) ;
+       rdf:type [ <DataQuantity> ]
+    )
+}
+
+<Entity>  (
+    CLOSED {
+       (  $<Entity_tes> <id> @linkml:String ? ;
+          rdf:type [ <Entity> ] ?
+       )
+    } OR @<CodeableConcept> OR @<Coding> OR @<DataQuantity> OR @<Quantity> OR @<ReferenceRange> OR @<SystolicBloodPressureMeas>
+)
+
+<Quantity> CLOSED {
+    (  $<Quantity_tes> (  &<Entity_tes> ;
+          rdf:type [ <Entity> ] ? ;
+          <value_decimal> @linkml:Decimal ? ;
+          <value_codeable_concept> @<CodeableConcept> ? ;
+          <unit> @<CodeableConcept> ?
+       ) ;
+       rdf:type [ fhir:Quantity ]
+    )
+}
+
+<ReferenceRange> CLOSED {
+    (  $<ReferenceRange_tes> (  &<Entity_tes> ;
+          rdf:type [ <Entity> ] ? ;
+          <lowBound> @<Quantity> ? ;
+          <highBound> @<Quantity> ? ;
+          <aggregate> @linkml:String ? ;
+          <referenceRangeMeaning> @<CodeableConcept> ? ;
+          <ageMeasQualifier> @<Quantity> ?
+       ) ;
+       rdf:type [ <ReferenceRange> ] ?
+    )
+}
+
+<SystolicBloodPressureMeas> CLOSED {
+    (  $<SystolicBloodPressureMeas_tes> (  &<Entity_tes> ;
+          rdf:type [ <Entity> ] ? ;
+          <key> @<CodeableConcept> ? ;
+          <data> @<DataQuantity> ? ;
+          <bloodPressureCuffSize> @<CodeableConcept> ? ;
+          <bodyLocationPrecoord> @<CodeableConcept> ? ;
+          <bodyPosition> @<CodeableConcept> ? ;
+          <referenceRange> @<ReferenceRange> ? ;
+          <associatedPrecondition> @<CodeableConcept> ?
+       ) ;
+       rdf:type [ <SystolicBloodPressureMeas> ]
+    )
+}
