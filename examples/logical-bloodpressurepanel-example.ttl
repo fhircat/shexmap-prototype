@@ -1,0 +1,150 @@
+@prefix fhir:  <http://hl7.org/fhir/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sct:   <http://snomed.info/id#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://hl7.org/fhir/SystolicBloodPressureMeas/sbp01>
+        a                             fhir:SystolicBloodPressureMeas ;
+        fhir:DomainResource.key       [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "8480-6" ] ;
+                                                                       fhir:Coding.display  [ fhir:value  "Systolic Blood Pressure" ] ;
+                                                                       fhir:Coding.system   [ fhir:value  "http://loinc.org"^^xsd:anyURI ] ;
+                                                                       fhir:index           0
+                                                                     ] ;
+                                        fhir:CodeableConcept.text    [ fhir:value
+                                                          "Systolic Blood Pressure" ]
+                                      ] ;
+        fhir:DomainResource.quantity  [ fhir:DataQuantity.unit_code  [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "8462-4" ] ;
+                                                                                                      fhir:Coding.display  [ fhir:value  "mm[Hg]" ] ;
+                                                                                                      fhir:Coding.system   [ fhir:value  "http://loinc.org"^^xsd:anyURI ] ;
+                                                                                                      fhir:index           0
+                                                                                                    ] ;
+                                                                       fhir:CodeableConcept.text    [ fhir:value
+                                                                                         "mm[Hg]" ]
+                                                                     ] ;
+                                        fhir:DataQuantity.value      [ fhir:value
+                                                          "120"^^xsd:decimal ]
+                                      ] ;
+        fhir:Resource.id              [ fhir:value
+                          "sbp01" ] ;
+        fhir:Resource.meta            [ fhir:Meta.profile  [ fhir:index  0 ;
+                                                             fhir:value  "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas"
+                                                           ]
+                                      ] .
+
+<http://hl7.org/fhir/MeanArterialPressureMeas/map01>
+        a                             fhir:MeanArterialPressureMeas ;
+        fhir:DomainResource.key       [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "8478-0" ] ;
+                                                                       fhir:Coding.display  [ fhir:value  "Mean blood pressure" ] ;
+                                                                       fhir:Coding.system   [ fhir:value  "http://loinc.org"^^xsd:anyURI ] ;
+                                                                       fhir:index           0
+                                                                     ] ;
+                                        fhir:CodeableConcept.text    [ fhir:value
+                                                          "Mean blood pressure" ]
+                                      ] ;
+        fhir:DomainResource.quantity  [ fhir:DataQuantity.unit_code  [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "8462-4" ] ;
+                                                                                                      fhir:Coding.display  [ fhir:value  "mm[Hg]" ] ;
+                                                                                                      fhir:Coding.system   [ fhir:value  "http://loinc.org"^^xsd:anyURI ] ;
+                                                                                                      fhir:index           0
+                                                                                                    ] ;
+                                                                       fhir:CodeableConcept.text    [ fhir:value
+                                                                                         "mm[Hg]" ]
+                                                                     ] ;
+                                        fhir:DataQuantity.value      [ fhir:value
+                                                          93.3 ]
+                                      ] ;
+        fhir:Resource.id              [ fhir:value
+                          "map01" ] ;
+        fhir:Resource.meta            [ fhir:Meta.profile  [ fhir:index  0 ;
+                                                             fhir:value  "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas"
+                                                           ]
+                                      ] .
+
+<http://hl7.org/fhir/DiastolicBloodPressureMeas/dbp01>
+        a                             fhir:DiastolicBloodPressureMeas ;
+        fhir:DomainResource.key       [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "8462-4" ] ;
+                                                                       fhir:Coding.display  [ fhir:value  "Diastolic Blood Pressure" ] ;
+                                                                       fhir:Coding.system   [ fhir:value  "http://loinc.org"^^xsd:anyURI ] ;
+                                                                       fhir:index           0
+                                                                     ] ;
+                                        fhir:CodeableConcept.text    [ fhir:value
+                                                          "Diastolic Blood Pressure" ]
+                                      ] ;
+        fhir:DomainResource.quantity  [ fhir:DataQuantity.unit_code  [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "8462-4" ] ;
+                                                                                                      fhir:Coding.display  [ fhir:value  "mm[Hg]" ] ;
+                                                                                                      fhir:Coding.system   [ fhir:value  "http://loinc.org"^^xsd:anyURI ] ;
+                                                                                                      fhir:index           0
+                                                                                                    ] ;
+                                                                       fhir:CodeableConcept.text    [ fhir:value
+                                                                                         "mm[Hg]" ]
+                                                                     ] ;
+                                        fhir:DataQuantity.value      [ fhir:value
+                                                          "80"^^xsd:decimal ]
+                                      ] ;
+        fhir:Resource.id              [ fhir:value
+                          "dbp01" ] ;
+        fhir:Resource.meta            [ fhir:Meta.profile  [ fhir:index  0 ;
+                                                             fhir:value  "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas"
+                                                           ]
+                                      ] .
+
+<http://hl7.org/fhir/BloodPressurePanel/bpp01>
+        a                            fhir:BloodPressurePanel ;
+        fhir:DomainResource.bloodPressureCuffSize
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "720738005" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "Blood pressure cuff, adult size large (physical object)" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "Blood pressure cuff, adult size large (physical object)" ]
+                ] ;
+        fhir:DomainResource.bodyPosition
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "720738005" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "Blood pressure cuff, adult size large (physical object)" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "Sitting Position" ]
+                ] ;
+        fhir:DomainResource.comment  [ fhir:value
+                          "This is a blood pressure panel logical model example." ] ;
+        fhir:DomainResource.dbp      <http://hl7.org/fhir/DiastolicBloodPressureMeas/dbp01> ;
+        fhir:DomainResource.exerciseAssociation
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "263678003" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "At rest" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "At rest" ]
+                ] ;
+        fhir:DomainResource.key      [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "85354-9" ] ;
+                                                                      fhir:Coding.display  [ fhir:value  "Blood Pressure Panel with all children optional" ] ;
+                                                                      fhir:Coding.system   [ fhir:value  "http://loinc.org"^^xsd:anyURI ] ;
+                                                                      fhir:index           0
+                                                                    ] ;
+                                       fhir:CodeableConcept.text    [ fhir:value
+                                                         "Blood Pressure Panel with all children optional" ]
+                                     ] ;
+        fhir:DomainResource.meanArterialPressureMeas
+                <http://hl7.org/fhir/MeanArterialPressureMeas/map01> ;
+        fhir:DomainResource.sbp      <http://hl7.org/fhir/SystolicBloodPressureMeas/sbp01> ;
+        fhir:DomainResource.sleepStatus
+                [ fhir:CodeableConcept.coding  [ fhir:Coding.code     [ fhir:value  "248218005" ] ;
+                                                 fhir:Coding.display  [ fhir:value  "Awake" ] ;
+                                                 fhir:Coding.system   [ fhir:value  "http://snomed.info/sct"^^xsd:anyURI ] ;
+                                                 fhir:index           0
+                                               ] ;
+                  fhir:CodeableConcept.text    [ fhir:value
+                                    "Awake" ]
+                ] ;
+        fhir:Resource.id             [ fhir:value
+                          "bpp01" ] ;
+        fhir:Resource.meta           [ fhir:Meta.profile  [ fhir:index  0 ;
+                                                            fhir:value  "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel"
+                                                          ]
+                                     ] ;
+        fhir:nodeRole                fhir:treeRoot .
+
