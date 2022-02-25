@@ -1,5 +1,6 @@
 {
   "resourceType": "BloodPressurePanel",
+  "id": "bpp01",
   "meta": {
     "profile": [ "http://opencem.org/fhir/StructureDefinition/BloodPressurePanel" ]
   },
@@ -13,6 +14,7 @@
   },
   "sbp": {
     "resourceType": "SystolicBloodPressureMeas",
+    "id": "sbp01",
     "meta": {
       "profile": [ "http://opencem.org/fhir/StructureDefinition/SystolicBloodPressureMeas" ]
     },
@@ -38,6 +40,7 @@
   },
   "dbp": {
     "resourceType": "DiastolicBloodPressureMeas",
+    "id": "dbp01",
     "meta": {
       "profile": [ "http://opencem.org/fhir/StructureDefinition/DiastolicBloodPressureMeas" ]
     },
@@ -63,6 +66,7 @@
   },
   "meanArterialPressureMeas": {
     "resourceType": "MeanArterialPressureMeas",
+    "id": "map01",
     "meta": {
       "profile": [ "http://opencem.org/fhir/StructureDefinition/MeanArterialPressureMeas" ]
     },
